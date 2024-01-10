@@ -1,0 +1,5 @@
+http://localhost:8000/auth/register [POST]
+http://localhost:8000/auth/login    [POST] 
+http://localhost:8000/auth/verify-token    [GET]
+http://localhost:8000/auth/forgot-password [POST]
+http://localhost:8000/auth/reset-password  [PATCH]
