@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "app.js",
+            "use": "@now/node-server"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/auth/(.*)",
+            "dest": "/routes/userAuth.js"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/app.js"
+        }
+    ]
+}
