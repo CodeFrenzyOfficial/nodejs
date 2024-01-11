@@ -72,7 +72,7 @@ module.exports.user_login = async (req, res) => {
       bcrypt.compare(password, user.rows[0].password, (err, validPassword) => {
         if (err) {
           res.status(401).json({
-            error: "Sorry! Email or password is incorrect"
+            error: "Sorry! Email or password is incorrect",
           });
         } else if (validPassword) {
           //generate a token
@@ -80,7 +80,7 @@ module.exports.user_login = async (req, res) => {
 
           res.status(200).json({
             message: "Login successfully!",
-            token
+            token,
           });
         } else {
           res.status(401).json({
@@ -109,3 +109,4 @@ module.exports.user_token_verify = async (req, res) => {
     });
   }
 };
+
