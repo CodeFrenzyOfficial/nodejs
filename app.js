@@ -12,19 +12,16 @@ app.use(express.json()); //to return files as json
 app.use(cors()); //for cross origin files
 
 app.get("/", async (req, res) => {
-  const data = await pool.query("SELECT * FROM users");
-  if (data.rows.length !== 0) {
-    res.send(data.rows);
-  } else {
-    res.status(500).json({
-      error: "error",
-    });
-  }
+  res.send(
+    `<h1>
+     @Vercel Postgres Server is Running 
+    </h1>`
+  );
 });
 
 //ROUTES
 app.use("/auth", require("./routes/userAuth"));
-app.use("/v1",require("./routes/usersCrud"))
+app.use("/v1", require("./routes/usersCrud"));
 
 //SERVER PORT
 app.listen(PORT, () => {

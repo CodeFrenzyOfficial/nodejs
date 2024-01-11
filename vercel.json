@@ -12,6 +12,10 @@
             "dest": "/routes/userAuth.js"
         },
         {
+            "src": "/v1/(.*)",
+            "dest": "/routes/usersCrud.js"
+        },
+        {
             "src": "/(.*)",
             "dest": "/app.js"
         }
