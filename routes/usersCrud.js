@@ -3,5 +3,4 @@ const userCrudController = require("../controllers/usersDataController");
 
 router.get("/getAllUsers", userCrudController.getAllUsers); 
 
-
 module.exports = router;
