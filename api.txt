@@ -1,6 +1,0 @@
-https://nodejs-seven-phi.vercel.app/auth/register        [POST]
-https://nodejs-seven-phi.vercel.app/auth/login           [POST] 
-https://nodejs-seven-phi.vercel.app/auth/verify-token    [GET]
-https://nodejs-seven-phi.vercel.app/auth/forgot-password [POST]
-https://nodejs-seven-phi.vercel.app/auth/reset-password  [PATCH]
-https://nodejs-seven-phi.vercel.app/v1/getAllUsers       [GET]

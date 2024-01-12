@@ -23,3 +23,21 @@ TRUNCATE TABLE users;
 
 -- delete the entire table
 DROP TABLE users;
+
+-- Images data
+
+CREATE TABLE users(
+    user_id SERIAL PRIMARY KEY,
+    name VARCHAR(70) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(200) NOT NULL,
+    p_image text[]
+);
+
+-- insert a fake user with images
+INSERT INTO users(name, email, password, p_image) VALUES('jhondoe', 'jhondoe@email.com', 'sheldon123', ARRAY['image_link1', 'image_link2']);
+
+INSERT INTO users (p_image) VALUES(ARRAY['']) WHERE 
+
+-- view all users in the users table
+SELECT * FROM users;
