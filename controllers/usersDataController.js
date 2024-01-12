@@ -38,7 +38,11 @@ const deleteUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-    const response = await pool.query("SELECT * FROM users");
+    const { name, email, user_id } = req.body;
+    const response = await pool.query(
+      "UPDATE users SET name = $1, email = $2 WHERE user_id = $3 RETURNING 'Done' AS result",
+      [name, email, user_id]
+    );
     if (response.rows.length !== 0) {
       res.status(200).json(response.rows);
     } else {
