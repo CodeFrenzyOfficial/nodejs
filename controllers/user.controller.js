@@ -81,6 +81,9 @@ module.exports.user_login = async (req, res) => {
           res.status(200).json({
             message: "Login successfully!",
             token,
+            email: user.rows[0].email,
+            user_id: user.rows[0].user_id,
+            name: user.rows[0].name,
           });
         } else {
           res.status(401).json({
@@ -109,4 +112,3 @@ module.exports.user_token_verify = async (req, res) => {
     });
   }
 };
-
