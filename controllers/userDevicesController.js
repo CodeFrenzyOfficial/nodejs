@@ -61,7 +61,7 @@ async function addUserDevice(req, res) {
 }
 
 async function deleteDeviceImage(req, res) {
-  const { url, user_id } = req.body;
+  const { id, user_id } = req.body;
 
   try {
     const user = await pool.query(
@@ -73,7 +73,7 @@ async function deleteDeviceImage(req, res) {
 
     if (user.rows.length !== 0) {
       let p_image = user.rows[0].p_image;
-      const imgIndex = p_image.findIndex((img) => img.id === url);
+      const imgIndex = p_image.findIndex((img) => img.id === id);
 
       if (imgIndex !== -1) {
         p_image.splice(imgIndex, 1);
