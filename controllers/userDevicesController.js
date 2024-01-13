@@ -116,7 +116,7 @@ async function updateImg(req, res) {
 
     if (user.rows.length !== 0) {
       let p_image = user.rows[0].p_image;
-      const imgIndex = p_image.findIndex((img) => img.id === img_id);
+      const imgIndex = p_image.findIndex((img) => img.id == img_id);
 
       if (imgIndex !== -1) {
         p_image[imgIndex] = { id: img_id, url, description: name };
